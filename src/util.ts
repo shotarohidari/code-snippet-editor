@@ -1,6 +1,4 @@
-import { AssertString } from "./types"
-
-export const checkEnvironmentVariable = (variable: object) => {
+export const checkEnvironmentVariable = (variable: Record<string,unknown>) => {
   const val = Object.values(variable)[0]
   if (!val) {
     throw new Error(
@@ -10,6 +8,14 @@ export const checkEnvironmentVariable = (variable: object) => {
 }
 
 export const getVariableName = (variable: object) => {
-//   console.log({variable});
   return Object.keys(variable)[0]
+}
+
+
+export const changeDateFormat = (strDate:string) => {
+    const ISORegex = /(?<years>\d{4})-(?<months>\d{2})-(?<days>\d{2})T(?<hours>\d{2}):(?<minutes>\d{2}):(?<seconds>\d{2})/
+    const match = strDate.match(ISORegex)
+    if(!match) throw new Error("有効な形式ではありません");
+    const {groups} = match;
+    return `${groups?.years}/${groups?.months}/${groups?.days} ${groups?.hours}:${groups?.minutes}`
 }
