@@ -17,5 +17,5 @@ export const changeDateFormat = (strDate:string) => {
     const match = strDate.match(ISORegex)
     if(!match) throw new Error("有効な形式ではありません");
     const {groups} = match;
-    return `${groups?.years}/${groups?.months}/${groups?.days} ${groups?.hours}:${groups?.minutes}`
+    return `${groups?.years}/${groups?.months}/${groups?.days} ${Number(groups?.hours) + 9}:${groups?.minutes}`
 }

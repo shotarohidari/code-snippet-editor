@@ -10,9 +10,11 @@
     "test": "npx vitest"
   },
   "dependencies": {
+    "@codemirror/lang-javascript": "^6.1.2",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@mui/material": "^5.11.4",
+    "@uiw/react-codemirror": "^4.19.6",
     "dotenv": "^16.0.3",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",

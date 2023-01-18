@@ -1,7 +1,7 @@
 import { checkEnvironmentVariable } from "./util";
 
-const API_ENDPOINT = import.meta.env.API_ENDPOINT;
+const VITE_API_ENDPOINT = import.meta.env.VITE_API_ENDPOINT;
 
-checkEnvironmentVariable(API_ENDPOINT);
+checkEnvironmentVariable({VITE_API_ENDPOINT});
 
-export {API_ENDPOINT}
+export {VITE_API_ENDPOINT}
